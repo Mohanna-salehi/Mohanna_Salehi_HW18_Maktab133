@@ -11,7 +11,7 @@ public class Movie extends BaseEntity<Long>{
     private String genre;
     private Integer duration;
 
-    @ManyToMany()
+    @ManyToMany(mappedBy = "movies")
     private Set<User> users = new HashSet<>();
 
     public Movie(String title, String genre, Integer duration,Set<User> users) {

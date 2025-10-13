@@ -14,7 +14,7 @@ public class User extends BaseEntity<Long>{
     private String email;
     private String password;
 
-    @ManyToMany(mappedBy = "movies",fetch = FetchType.EAGER,cascade ={ CascadeType.PERSIST})
+    @ManyToMany(fetch = FetchType.EAGER,cascade ={ CascadeType.PERSIST})
     @JoinTable(
             name = "user_movie", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "movie_id")
     )
