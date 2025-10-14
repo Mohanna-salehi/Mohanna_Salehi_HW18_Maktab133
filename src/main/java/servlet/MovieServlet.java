@@ -52,6 +52,10 @@ public class MovieServlet  extends HttpServlet {
         writer.println("<title>new-movie</title>");
         writer.println("</head>");
         writer.println("<body>");
+        writer.println("<header style='width:100% ;height: 100px; background-color: lightcyan;align';text-align: center;>");
+        writer.println("<h2>add movie </h2>");
+        writer.println("</header>");
+        writer.println("<div style='height: 500px'>");
         writer.println("<h3>NEW MOVIE</h3>");
         writer.println("<br>");
         writer.println("<form method=post>");
@@ -63,6 +67,10 @@ public class MovieServlet  extends HttpServlet {
         writer.println("<input type=text name=duration placeholder=enter the duration>");
         writer.println("<input type=submit>");
         writer.println("</form>");
+        writer.println("</div>");
+        writer.println("<footer style=' background-color: lightcyan;width: 100%; height: 80px;'>");
+        writer.println("<h2>movie page</h2>");
+        writer.println("</footer>");
         writer.println("</body>");
         writer.println("</html>");
 

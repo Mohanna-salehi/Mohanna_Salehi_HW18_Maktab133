@@ -56,9 +56,13 @@ public class UserServlet extends HttpServlet {
         writer.println("<title>new-user</title>");
         writer.println("</head>");
         writer.println("<body>");
+        writer.println("<header style='width:100% ;height: 100px; background-color: lightcyan;align';text-align: center;>");
+        writer.println("<h2>sign in</h2>");
+        writer.println("</header>");
         writer.println("<h3>NEW USER</h3>");
         writer.println("<br>");
-        writer.println("<form method=post>");
+        writer.println("<div style='height: 500px'>");
+        writer.println("<form method='post'>");
         writer.println("<lable for=username>username</lable>");
         writer.println("<input type=text name=username placeholder=enter the username>");
         writer.println("<lable for=email>email</lable>");
@@ -67,6 +71,10 @@ public class UserServlet extends HttpServlet {
         writer.println("<input type=text name=password placeholder=enter the password>");
         writer.println("<input type=submit>");
         writer.println("</form>");
+        writer.println("</div>");
+        writer.println("<footer style=' background-color: lightcyan;width: 100%; height: 80px;'>");
+        writer.println("<h2>watchlist page</h2>");
+        writer.println("</footer>");
         writer.println("</body>");
         writer.println("</html>");
 

@@ -59,6 +59,10 @@ public class UserMovieServlet extends HttpServlet {
         writer.println("<html>");
         writer.println("<head><title>WatchList</title></head>");
         writer.println("<body>");
+        writer.println("<header style='width:100% ;height: 100px; background-color: lightcyan;align';text-align: center;>");
+        writer.println("<h2>add movie to watchlist</h2>");
+        writer.println("</header>");
+        writer.println("<div style='height: 500px'>");
         writer.println("<h3>USER'S WATCHLIST</h3>");
         writer.println("<br>");
         writer.println("<form method='post'>");
@@ -96,7 +100,10 @@ public class UserMovieServlet extends HttpServlet {
             } else {
                 writer.println("<p style='color:red;'>There are no movies in the user's watchlist.</p>");
             }
-
+        writer.println("</div>");
+        writer.println("<footer style=' background-color: lightcyan;width: 100%; height: 80px;'>");
+        writer.println("<h2>user page</h2>");
+        writer.println("</footer>");
         writer.println("</body>");
         writer.println("</html>");
     }
