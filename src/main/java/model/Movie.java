@@ -2,6 +2,8 @@ package model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToMany;
+
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,15 +11,19 @@ import java.util.Set;
 public class Movie extends BaseEntity<Long>{
     private String title;
     private String genre;
-    private Integer duration;
+    private String description;
+    private LocalDate date;
+    private Double rating;
 
     @ManyToMany(mappedBy = "movies")
     private Set<User> users = new HashSet<>();
 
-    public Movie(String title, String genre, Integer duration,Set<User> users) {
+    public Movie(String title, String genre, String description, LocalDate date, Double rating, Set<User> users) {
         this.title = title;
         this.genre = genre;
-        this.duration = duration;
+        this.description = description;
+        this.date = date;
+        this.rating = rating;
         this.users = users;
     }
 
@@ -41,12 +47,12 @@ public class Movie extends BaseEntity<Long>{
         this.genre = genre;
     }
 
-    public Integer getDuration() {
-        return duration;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDuration(Integer duration) {
-        this.duration = duration;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Set<User> getUsers() {
@@ -57,13 +63,31 @@ public class Movie extends BaseEntity<Long>{
         this.users = users;
     }
 
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
                 "title='" + title + '\'' +
                 ", genre='" + genre + '\'' +
-                ", duration='" + duration + '\'' +
-                ", user=" + users +
+                ", description=" + description +
+                ", date=" + date +
+                ", rating=" + rating +
+                ", users=" + users +
                 '}';
     }
 }

@@ -3,6 +3,7 @@ package builder;
 import model.Movie;
 import model.User;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 public class MovieBuilder implements Builder<Movie>{
@@ -25,8 +26,8 @@ public class MovieBuilder implements Builder<Movie>{
         return this;
     }
 
-    public MovieBuilder setDuration(Integer duration) {
-        movie.setDuration(duration);
+    public MovieBuilder setDescription(String description) {
+        movie.setDescription(description);
         return this;
     }
 
@@ -35,9 +36,22 @@ public class MovieBuilder implements Builder<Movie>{
         movie.setUsers(users);
         return this;
     }
+
+
+    public MovieBuilder setDate(LocalDate date) {
+        movie.setDate(date);
+        return this;
+    }
+
+
+    public MovieBuilder setRating(Double rating) {
+        movie.setRating(rating);
+        return this;
+    }
+
+
     @Override
     public Movie result() throws IllegalAccessException {
-
         return movie;
     }
 

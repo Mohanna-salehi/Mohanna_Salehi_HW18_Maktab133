@@ -1,6 +1,7 @@
 package builder;
 
 import model.Movie;
+import model.Role;
 import model.User;
 
 import java.util.Set;
@@ -28,6 +29,10 @@ public class UserBuilder implements Builder<User> {
 
     public UserBuilder setPassword(String password) {
         user.setPassword(password);
+        return this;
+    }
+    public UserBuilder setRole(Role role) {
+        user.setRole(role);
         return this;
     }
 

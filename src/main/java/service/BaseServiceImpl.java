@@ -15,7 +15,7 @@ public class BaseServiceImpl<ID extends Number,T extends BaseEntity<ID>> impleme
     }
 
     @Override
-    public void save(T entity) {
+    public void save(T entity) throws IllegalAccessException {
      repository.save(entity);
     }
 

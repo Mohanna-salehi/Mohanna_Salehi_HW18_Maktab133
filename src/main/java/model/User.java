@@ -20,11 +20,15 @@ public class User extends BaseEntity<Long>{
     )
     private Set<Movie> movies= new HashSet<>();
 
-    public User(String username, String email, String password, Set<Movie> movies) {
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public User(String username, String email, String password, Set<Movie> movies, Role role) {
         this.username = username;
         this.email = email;
         this.password = password;
         this.movies = movies;
+        this.role = role;
     }
 
     public User() {
@@ -63,6 +67,14 @@ public class User extends BaseEntity<Long>{
         this.movies = movies;
     }
 
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -70,6 +82,7 @@ public class User extends BaseEntity<Long>{
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", movies=" + movies +
+                ", role=" + role +
                 '}';
     }
 }
