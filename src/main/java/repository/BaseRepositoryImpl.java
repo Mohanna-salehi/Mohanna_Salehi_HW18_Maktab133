@@ -35,7 +35,6 @@ public class BaseRepositoryImpl<ID extends Number,T  extends BaseEntity<ID>> imp
         EntityManager em = Connection.getConnection();
         try{
             em.getTransaction().begin();
-            entity.setId(id);
             em.merge(entity);
             em.getTransaction().commit();
         } catch (PersistenceException e) {
@@ -68,7 +67,7 @@ public class BaseRepositoryImpl<ID extends Number,T  extends BaseEntity<ID>> imp
         EntityManager em = Connection.getConnection();
         try{
             em.getTransaction().begin();
-            TypedQuery<T> queryByBrand = em.createQuery("select * from "+entityClass.getName()+" o",entityClass);
+            TypedQuery<T> queryByBrand = em.createQuery("select o from "+entityClass.getName()+" o",entityClass);
             em.getTransaction().commit();
             return queryByBrand.getResultList();
         } catch (PersistenceException e) {

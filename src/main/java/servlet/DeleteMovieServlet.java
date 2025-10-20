@@ -35,35 +35,5 @@ public class DeleteMovieServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
-
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html;charset=UTF-8");
-        PrintWriter writer = resp.getWriter();
-
-        writer.println("<html>");
-        writer.println("<head><title>MovieList</title></head>");
-        writer.println("<body>");
-        writer.println("<header style='width:100% ;height: 100px; background-color: lightcyan;align';text-align: center;>");
-        writer.println("<h2>add movie </h2>");
-        writer.println("</header>");
-        writer.println("<div style='height: 500px'>");
-        writer.println("<h3>DELETE MOVIE</h3>");
-        writer.println("<br>");
-        writer.println("<form method='post'>");
-        writer.println("<label for='movieID'>Movie ID:</label>");
-        writer.println("<input type='text' name='movieID' placeholder='enter the movieID'>");
-        writer.println("<input type='submit' value='delete Movie'>");
-        writer.println("</form>");
-        writer.println("<br>");
-        writer.println("</div>");
-        writer.println("<footer style=' background-color: lightcyan;width: 100%; height: 80px;'>");
-        writer.println("<h2>delete movie page</h2>");
-        writer.println("</footer>");
-
-        writer.println("</body>");
-        writer.println("</html>");
-    }
 }
 

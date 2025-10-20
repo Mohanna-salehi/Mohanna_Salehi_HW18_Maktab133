@@ -1,9 +1,12 @@
 package service;
 
 import builder.UserBuilder;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import model.User;
 import repository.BaseRepositoryImpl;
 import repository.UserRepository;
+import util.Connection;
 import util.EncodingPassword;
 
 public class UserService extends BaseServiceImpl<Long, User> {
@@ -47,5 +50,13 @@ public class UserService extends BaseServiceImpl<Long, User> {
         }
      return found;
     }
+
+    public User findByUsername(String username){
+      return userRepository.findByUsername(username);
+    }
+
+
+
+
 
 }

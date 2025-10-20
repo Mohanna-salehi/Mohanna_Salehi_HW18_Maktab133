@@ -33,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("password");
         String role = req.getParameter("role");
         if (username==null || password==null || email==null || role==null){
-            req.getRequestDispatcher("front/register.html").forward(req, resp);
+            resp.sendRedirect("front/register.html");
         }
         Role role1 = Role.valueOf(role);
         User user = new User(username,email,password,new HashSet<>(),role1);

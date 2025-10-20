@@ -15,12 +15,12 @@
     <servlet-class>servlet.LoginServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>UserWatchListServlet</servlet-name>
-    <servlet-class>servlet.UserWatchListServlet</servlet-class>
+    <servlet-name>UserMovieLibraryServlet</servlet-name>
+    <servlet-class>servlet.UserMovieLibraryServlet</servlet-class>
   </servlet>
   <servlet>
-    <servlet-name>AdminWatchListServlet</servlet-name>
-    <servlet-class>servlet.AdminWatchListServlet</servlet-class>
+    <servlet-name>AdminMovieLibraryServlet</servlet-name>
+    <servlet-class>servlet.AdminMovieLibraryServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -29,8 +29,8 @@
   </servlet>
 
   <servlet>
-    <servlet-name>EditBookServlet</servlet-name>
-    <servlet-class>servlet.EditBookServlet</servlet-class>
+    <servlet-name>updatedMovieServlet</servlet-name>
+    <servlet-class>servlet.updatedMovieServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -45,15 +45,18 @@
     <servlet-class>servlet.UserMovies</servlet-class>
   </servlet>
 
+
+
   <servlet>
-    <servlet-name>DeleteMovieServlet</servlet-name>
-    <servlet-class>servlet.DeleteMovieServlet</servlet-class>
+    <servlet-name>EditUserServlet</servlet-name>
+    <servlet-class>servlet.EditUserServlet</servlet-class>
   </servlet>
 
 
+
   <servlet-mapping>
-    <servlet-name>DeleteMovieServlet</servlet-name>
-    <url-pattern>/delete-movie</url-pattern>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern>/front/EditUserServlet</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
@@ -79,17 +82,21 @@
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>UserWatchListServlet</servlet-name>
-    <url-pattern>/front/AllMovieUser</url-pattern>
+    <servlet-name>UserMovieLibraryServlet</servlet-name>
+    <url-pattern>/front/User-MovieLibrary</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>AdminWatchListServlet</servlet-name>
-    <url-pattern>/front/allMovieAdmin</url-pattern>
+    <servlet-name>AdminMovieLibraryServlet</servlet-name>
+    <url-pattern>/front/Admin-MovieLibrary</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminMovieLibraryServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>
-    <servlet-name>EditBookServlet</servlet-name>
+    <servlet-name>updatedMovieServlet</servlet-name>
     <url-pattern>/editMovie</url-pattern>
   </servlet-mapping>
 

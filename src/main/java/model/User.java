@@ -23,6 +23,8 @@ public class User extends BaseEntity<Long>{
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    private String image;
+
     public User(String username, String email, String password, Set<Movie> movies, Role role) {
         this.username = username;
         this.email = email;
@@ -33,6 +35,22 @@ public class User extends BaseEntity<Long>{
 
     public User() {
 
+    }
+
+    public User(String username,String email, String password) {
+        this.username = username;
+        this.password = password;
+
+    }
+
+
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getUsername() {

@@ -33,7 +33,7 @@ public class MovieServlet  extends HttpServlet {
 
         String title = req.getParameter("title");
         String genre = req.getParameter("genre");
-        String description = req.getParameter("duration");
+        String description = req.getParameter("description");
         LocalDate date = LocalDate.parse(req.getParameter("date"));
         Double rating = Double.parseDouble(req.getParameter("rating"));
 
@@ -47,7 +47,7 @@ public class MovieServlet  extends HttpServlet {
         } catch (IllegalAccessException e) {
             throw new RuntimeException(e);
         }
-        req.getRequestDispatcher("front/addMovie.html").forward(req, resp);
+        req.getRequestDispatcher("/front/addMovie.html").forward(req, resp);
 
     }
     @Override
